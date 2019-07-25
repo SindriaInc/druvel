@@ -1,0 +1,42 @@
+<?php
+/**
+ * @file
+ * druvel module
+ *
+ */
+
+
+require_once 'vendor/autoload.php';
+
+
+/**
+ * Implement hook_menu()
+ */
+function druvel_menu() {
+    return Druvel_Http_Kernel::webRoutes();
+}
+
+
+/**
+ * Wrapper callback for web routes MVC kernel handle
+ */
+function druvel_web_routes_wrapper() {
+    $kernel = new Druvel_Http_Kernel();
+    $kernel->webHandle();
+}
+
+
+/**
+ * Custom preprocess to implement routing by node->type
+ *
+ * @param $vars
+ */
+function druvel_preprocess(&$vars) {
+    $kernel = new Druvel_Http_Kernel();
+    $kernel->typeHandle($vars);
+}
+
+
+
+
+

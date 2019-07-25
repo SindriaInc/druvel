@@ -1,0 +1,6 @@
+name = Druvel
+description = Micro-framework mvc OOP for drupal 7 module development like laravel design pattern
+package = Sindria Inc
+core = 7.x
+files[] = druvel.install
+files[] = druvel.module
