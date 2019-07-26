@@ -17,7 +17,7 @@
     },
     "files": [
       "src/Druvel/Helpers/helpers.php",
-      "src/Druvel/Helpers/d7.php"
+      "src/Druvel/Helpers/druvel.php"
     ]
   }
 }
