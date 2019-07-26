@@ -12,6 +12,10 @@
     }
   ],
   "autoload": {
+    "classmap": [
+      "database/migrations",
+      "database/seeds"
+    ],
     "psr-0": {
       "Druvel_": "src/"
     },
