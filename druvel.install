@@ -4,3 +4,31 @@
  * druvel install
  *
  */
+
+
+
+/**
+ * Implements hook_install().
+ */
+function druvel_install() {
+    node_types_rebuild();
+    $types = node_type_get_types();
+    node_add_body_field($types['sindria']);
+}
+
+
+
+/**
+ * Implements hook_uninstall().
+ */
+function druvel_uninstall() {
+    $ournewtype = 'sindria';
+    $sql = 'SELECT nid FROM {node} n WHERE n.type = :type';
+    $result = db_query($sql, array(':type' => $ournewtype));
+    $nodeids = array();
+    foreach ($result as $row) {
+        $nodeids[] = $row->nid;
+    }
+    node_delete_multiple($nodeids);
+    node_type_delete($ournewtype);
+}

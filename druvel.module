@@ -24,6 +24,14 @@ function druvel_node_info() {
 
 
 /**
+ * Implement hook_form()
+ */
+function sindria_form($node, $form_state) {
+    return node_content_form($node, $form_state);
+}
+
+
+/**
  * Implement hook_menu()
  */
 function druvel_menu() {

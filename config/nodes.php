@@ -9,11 +9,11 @@
  *
  * return [
  *     '<machine-name>' => array(
- *           'name' => t('Product'),
- *           'base' => 'product',
- *           'description' => t('You can define new Products here'),
+ *           'name' => t('Sindria'),
+ *           'base' => 'sindria',
+ *           'description' => t('You can define new Sindria here'),
  *           'has_title' => TRUE,
- *           'title_label' => t('Product title')
+ *           'title_label' => t('Sindria title')
  *     )
  * ];
  *
@@ -22,5 +22,11 @@
 
 
 return [
-
+    'sindria' => array(
+        'name' => t('Sindria'),
+        'base' => 'sindria',
+        'description' => t('You can define new Sindria here'),
+        'has_title' => TRUE,
+        'title_label' => t('Sindria title')
+    )
 ];
