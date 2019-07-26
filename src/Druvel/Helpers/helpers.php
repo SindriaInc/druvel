@@ -1662,34 +1662,6 @@ if (!function_exists('tap')) {
 }
 
 
-// Manual var_dumper without symfony/var_dumper package
-//if (!function_exists('dd')) {
-//    /**
-//     * Dump and Die debug function
-//     */
-//    function dd() {
-//        $args = func_get_args();
-//        echo '<pre>';
-//        call_user_func_array('var_dump', $args);
-//        echo '</pre>';
-//        die();
-//    }
-//}
-//
-//
-//if (!function_exists('d')) {
-//    /**
-//     * Dump debug function
-//     */
-//    function d() {
-//        $args = func_get_args();
-//        echo '<pre>';
-//        call_user_func_array('var_dump', $args);
-//        echo '</pre>';
-//    }
-//}
-
-
 if (!function_exists('data_fill')) {
     /**
      * Fill in data where it's missing.
