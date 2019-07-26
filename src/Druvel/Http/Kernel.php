@@ -54,7 +54,7 @@ class Druvel_Http_Kernel
     public function webHandle() {
         $validRoutes = Druvel_Http_Kernel::webRoutes();
 
-        // Cerca la rotta valida per la richiesta corrente
+        // Search valid route for current request
         foreach ($validRoutes as $key => $value) {
 
             $validUri = '/' . $key;

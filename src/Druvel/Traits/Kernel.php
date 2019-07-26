@@ -28,9 +28,15 @@ trait Druvel_Traits_Kernel
      * @return bool|string
      */
     public function cleanUri ($uri) {
+
         if (strpos($uri, 'en/') !== false) {
             $uri = substr($uri, strlen('en/'));
         }
+
+        if (strpos($uri, 'it/') !== false) {
+            $uri = substr($uri, strlen('it/'));
+        }
+
         return $uri;
     }
 
