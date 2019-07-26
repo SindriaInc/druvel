@@ -5,6 +5,7 @@
  *
  * Manual var_dumper Helpers file
  *
+ * @package druvel
  * @author Luca Pitzoi <luca.pitzoi@sindria.org>
  * @version 0.1.0
  *
