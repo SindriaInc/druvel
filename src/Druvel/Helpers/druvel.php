@@ -1,9 +1,9 @@
 <?php
 /**
  * @file
- * d7.php
+ * druvel.php
  *
- * Drupal 7 Helpers File
+ * Druvel Helpers File
  *
  * @package druvel
  * @author Luca Pitzoi <luca.pitzoi@sindria.org>
@@ -12,13 +12,13 @@
  */
 
 
-if (!function_exists('entity_field')) {
+if (!function_exists('druvel_entity_field')) {
     /**
      * Get entity field
      *
      * @param $entity_field array
      */
-    function entity_field($entity_field, $field) {
+    function druvel_entity_field($entity_field, $field) {
         foreach ($entity_field as $key => $value) {
             $value = $value[0];
         }
@@ -27,13 +27,13 @@ if (!function_exists('entity_field')) {
 }
 
 
-if (!function_exists('entity_collection')) {
+if (!function_exists('druvel_entity_collection')) {
     /**
      * Get entity collection
      *
      * @param $entity_field array
      */
-    function entity_collection($entity_field, $field) {
+    function druvel_entity_collection($entity_field, $field) {
 
         $fields = array();
 
@@ -47,7 +47,7 @@ if (!function_exists('entity_collection')) {
 }
 
 
-if (!function_exists('render_field')) {
+if (!function_exists('druvel_render_field')) {
     /**
      * Render field using entity_type and entity
      *
@@ -62,7 +62,7 @@ if (!function_exists('render_field')) {
      * @param $field
      * @return string
      */
-    function render_field($entity_type, $entity, $field) {
+    function druvel_render_field($entity_type, $entity, $field) {
 
         // Must load field content for entity before using field_view_value()
         $fields = field_get_items($entity_type, $entity, $field);
@@ -76,20 +76,20 @@ if (!function_exists('render_field')) {
 }
 
 
-if (!function_exists('gen_url')) {
+if (!function_exists('druvel_gen_url')) {
     /**
      * Generate url
      *
      * @param $entity_field
      * @return bool|string
      */
-    function gen_url($entity_field) {
+    function druvel_gen_url($entity_field) {
         return file_create_url(entity_field($entity_field, 'uri'));
     }
 }
 
 
-if (!function_exists('gen_collection')) {
+if (!function_exists('druvel_gen_collection')) {
     /**
      * Generate collection data from drupal field collection
      *
@@ -97,7 +97,7 @@ if (!function_exists('gen_collection')) {
      * @param $field_collection
      * @return array
      */
-    function gen_collection($field_collection) {
+    function druvel_gen_collection($field_collection) {
 
         $results = array();
         $collection = array();
@@ -118,14 +118,14 @@ if (!function_exists('gen_collection')) {
 }
 
 
-if (!function_exists('gen_collection_optimize')) {
+if (!function_exists('druvel_gen_collection_optimize')) {
     /**
      * Generate collection data from drupal field collection
      *
      * @param $field_collection
      * @return array
      */
-    function gen_collection_optimize($field_collection) {
+    function druvel_gen_collection_optimize($field_collection) {
 
         $results = array();
         $collection = array();
@@ -142,14 +142,14 @@ if (!function_exists('gen_collection_optimize')) {
 }
 
 
-if (!function_exists('gen_target_attribute')) {
+if (!function_exists('druvel_gen_target_attribute')) {
     /**
      * Generate target attribute
      *
      * @param $target
      * @return string
      */
-    function gen_target_attribute($target) {
+    function druvel_gen_target_attribute($target) {
         $target_attribute = 'target=' . '"' . $target . '"';
 
         if ($target !== '_blank') {
