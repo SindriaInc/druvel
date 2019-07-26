@@ -16,6 +16,14 @@ require_once 'vendor/autoload.php';
 
 
 /**
+ * Implements hook_node_info()
+ */
+function druvel_node_info() {
+    return Druvel_Utility_Config::configNodes();
+}
+
+
+/**
  * Implement hook_menu()
  */
 function druvel_menu() {
