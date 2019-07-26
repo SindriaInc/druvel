@@ -3,7 +3,7 @@
  * @file
  * debug.php
  *
- * Manual var_dumper without symfony/var_dumper package
+ * Manual var_dumper Helpers file
  *
  * @author Luca Pitzoi <luca.pitzoi@sindria.org>
  * @version 0.1.0

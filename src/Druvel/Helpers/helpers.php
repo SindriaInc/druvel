@@ -3,7 +3,7 @@
  * @file
  * helpers.php
  *
- * Forked of Laravel Helpers File
+ * Fork of Laravel Helpers File
  *
  * @author Luca Pitzoi <luca.pitzoi@sindria.org>
  * @version 0.1.0
