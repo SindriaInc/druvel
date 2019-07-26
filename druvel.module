@@ -35,8 +35,3 @@ function druvel_preprocess(&$vars) {
     $kernel = new Druvel_Http_Kernel();
     $kernel->typeHandle($vars);
 }
-
-
-
-
-
