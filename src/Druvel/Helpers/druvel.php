@@ -104,7 +104,6 @@ if (!function_exists('druvel_gen_collection')) {
 
         $ids = entity_collection($field_collection, 'value');
 
-
         foreach ($ids as $key => $id) {
             $results[$key] = entity_load('field_collection_item', array($id));
         }
@@ -197,6 +196,48 @@ if (!function_exists('druvel_node_id')) {
         return substr(druvel_node_path($node_alias), strlen('/node'));
     }
 }
+
+
+if (!function_exists('druvel_parent_label')) {
+    /**
+     * Get parent label string from entire uri alias
+     *
+     * @param $uri
+     * @return string
+     */
+    function druvel_parent_label($uri) {
+        $string = explode('/', $uri);
+        return $string[0];
+    }
+}
+
+
+//if (!function_exists('druvel_parent_link')) {
+//    /**
+//     * Get parent label string from entire uri alias
+//     *
+//     * @param $uri
+//     * @return string
+//     */
+//    function druvel_parent_link($uri) {
+//        $string = explode('/', $uri);
+//        return $string[0];
+//    }
+//}
+//
+//
+//if (!function_exists('druvel_parent_url')) {
+//    /**
+//     * Get parent label string from entire uri alias
+//     *
+//     * @param $uri
+//     * @return string
+//     */
+//    function druvel_parent_url($uri) {
+//        $string = explode('/', $uri);
+//        return $string[0];
+//    }
+//}
 
 
 if (!function_exists('druvel_gen_breadcrumb')) {
