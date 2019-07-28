@@ -158,3 +158,44 @@ if (!function_exists('druvel_gen_target_attribute')) {
         return $target_attribute;
     }
 }
+
+
+if (!function_exists('druvel_node_alias')) {
+    /**
+     * Get node alias from node->id
+     *
+     * @param $node_id
+     * @return string
+     */
+    function druvel_node_alias($node_id) {
+        return url('node/' . $node_id, array('absolute' => TRUE));
+    }
+}
+
+
+if (!function_exists('druvel_node_path')) {
+    /**
+     * Get node local path from node alias
+     *
+     * @param $node_alias
+     * @return string
+     */
+    function druvel_node_path($node_alias) {
+        return drupal_get_normal_path($node_alias);
+    }
+}
+
+
+if (!function_exists('druvel_node_id')) {
+    /**
+     * Get node->id from node alias
+     *
+     * @param $node_alias
+     * @return string
+     */
+    function druvel_node_id($node_alias) {
+        return substr(druvel_node_path($node_alias), strlen('/node'));
+    }
+}
+
+
