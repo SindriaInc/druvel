@@ -199,3 +199,92 @@ if (!function_exists('druvel_node_id')) {
 }
 
 
+if (!function_exists('druvel_gen_breadcrumb')) {
+    /**
+     * Generate breadcrumb with separated links and labels from current friendly url
+     *
+     * @param $uri
+     * @return array
+     */
+    function druvel_gen_breadcrumb($uri) {
+
+        global $language;
+        global $base_url;
+
+        $elements = array();
+
+        $relative = explode('/', $uri);
+        $links = array();
+        $labels = explode('/', str_replace('-', ' ', $uri));
+
+        foreach ($relative as $key => $value) {
+
+            if ($language->language == 'und') {
+                if ($key == 0) {
+                    $links[$key] = $base_url . '/' . $value;
+                }
+                if ($key == 1) {
+                    $links[$key] = $base_url . '/' . $relative[$key-1] . '/' . $value;
+                }
+                if ($key == 2) {
+                    $links[$key] = $base_url . '/' . $relative[0] . '/' . $relative[1] . '/' . $value;
+                }
+                if ($key == 3) {
+                    $links[$key] = $base_url . '/' . $relative[0] . '/' . $relative[1] . '/' . $relative[2] . '/' . $value;
+                }
+                if ($key == 4) {
+                    $links[$key] = $base_url . '/' . $relative[0] . '/' . $relative[1] . '/' . $relative[2] . '/' .$relative[3] . '/' . $value;
+                }
+            }
+
+            if ($language->language == 'en' || $language->language == 'en-us') {
+                if ($key == 0) {
+                    $links[$key] = $base_url . '/en/' . $value;
+                }
+                if ($key == 1) {
+                    $links[$key] = $base_url . '/en/' . $relative[$key-1] . '/' . $value;
+                }
+                if ($key == 2) {
+                    $links[$key] = $base_url . '/en/' . $relative[0] . '/' . $relative[1] . '/' . $value;
+                }
+                if ($key == 3) {
+                    $links[$key] = $base_url . '/en/' . $relative[0] . '/' . $relative[1] . '/' . $relative[2] . '/' . $value;
+                }
+                if ($key == 4) {
+                    $links[$key] = $base_url . '/en/' . $relative[0] . '/' . $relative[1] . '/' . $relative[2] . '/' .$relative[3] . '/' . $value;
+                }
+            }
+
+            if ($language->language == 'it' || $language->language == 'it-it') {
+                if ($key == 0) {
+                    $links[$key] = $base_url . '/it/' . $value;
+                }
+                if ($key == 1) {
+                    $links[$key] = $base_url . '/it/' . $relative[$key-1] . '/' . $value;
+                }
+                if ($key == 2) {
+                    $links[$key] = $base_url . '/it/' . $relative[0] . '/' . $relative[1] . '/' . $value;
+                }
+                if ($key == 3) {
+                    $links[$key] = $base_url . '/it/' . $relative[0] . '/' . $relative[1] . '/' . $relative[2] . '/' . $value;
+                }
+                if ($key == 4) {
+                    $links[$key] = $base_url . '/it/' . $relative[0] . '/' . $relative[1] . '/' . $relative[2] . '/' . $relative[3] . '/' . $value;
+                }
+            }
+        }
+
+        // Array friendly
+        foreach ($links as $key => $link) {
+            $elements[$key] = [
+                "link"  => $link,
+                "label" => $labels[$key]
+            ];
+        }
+
+        return $elements;
+    }
+}
+
+
+
