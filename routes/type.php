@@ -20,5 +20,9 @@
 
 
 return [
-
+    'sindria' => array(
+              'controller'          => 'Druvel_Http_Controllers_DruvelController',
+              'method'              => 'index',
+              'arguments'           => array(),
+    )
 ];

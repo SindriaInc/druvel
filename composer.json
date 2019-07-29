@@ -2,7 +2,9 @@
   "name": "sindria/druvel",
   "description": "Micro-framework mvc OOP for drupal 7 module development like laravel design pattern",
   "require": {
-    "php": "^5.6 || ^7.0"
+    "php": "^5.6 || ^7.0",
+    "symfony/var-dumper": "^4.3",
+    "guzzlehttp/guzzle": "^6.3"
   },
   "license": "MIT",
   "authors": [
