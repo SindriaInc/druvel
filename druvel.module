@@ -35,7 +35,7 @@ function sindria_form($node, $form_state) {
  * Implement hook_menu()
  */
 function druvel_menu() {
-    return Druvel_Http_Kernel::webRoutes();
+    return Druvel_Http_KernelAbstract::webRoutes();
 }
 
 
